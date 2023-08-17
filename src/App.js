@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Components/Navbar';
-import News from './Components/News';
+import OtherApiMethods from './Pages/OtherApiMethods';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Newsapp from './Pages/Newsapp';
 
 
 
 function App() {
   return (
-    <>
-    <Navbar />
-    <News pagesize="6" />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Newsapp />} />
+        <Route path="/newsapp" element={<Newsapp />} />
+        <Route path="/otherapimethods" element={<OtherApiMethods />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
